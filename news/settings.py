@@ -25,7 +25,10 @@ SECRET_KEY = 'ihcz!#div!t@gfh$zw8#mlwhg7loy58p-e=)9x(5*_zj&1r*mn'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = False
 
-ALLOWED_HOSTS = ['*']
+ALLOWED_HOSTS = ['newsclustering.azurewebsites.net', 'localhost', '127.0.0.1'] 
+
+if 'DJANGO_ALLOWED_HOSTS' in os.environ:     
+    ALLOWED_HOSTS += os.environ['DJANGO_ALLOWED_HOSTS'].split(','']
 
 
 # Application definition
